@@ -15,7 +15,7 @@ jobs:
     - name: Log in to Docker Hub
       uses: docker/login-action@v1
       with:
-        username: ${{ secrets.DOCKER_USERNAME }}
+        username: ${{ secrets.DOCKER_USERNAME }}  # Put your login credentials in the Setting->Security->Actions in Secrets and variable 
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build and Push Docker image
@@ -27,4 +27,4 @@ jobs:
         tags: hvz11/learning-ci-cd:latest  # Replace with your Docker Hub username and repository
 
     - name: Verify Pushed Image
-      run: docker push hvz11/learning-ci-cd:latest  # Replace with your Docker Hub username and repository
+      run: docker pull hvz11/learning-ci-cd:latest  # Replace with your Docker Hub username and repository
